@@ -1,0 +1,126 @@
+---
+layout: default
+title: Agnese Kapteine | Marketing
+---
+{% assign profile = site.data.profile %}
+{% assign projects = site.data.portfolio %}
+{% assign cv_len = profile.cv_url | size %}
+{% assign photo_len = profile.portrait | size %}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1 id="hero-title"><span>{{ profile.headline_1 | escape }}</span> <span>{{ profile.headline_2 | escape }}</span></h1>
+      <p class="lead">{{ profile.lead | escape }}</p>
+      <div class="actions">
+        {% if projects.size > 0 %}
+        <a class="btn btn-solid" href="#portfolio">See my work</a>
+        {% else %}
+        <a class="btn btn-solid" href="#experience">See my work</a>
+        {% endif %}
+        {% if cv_len > 0 %}
+        <a class="btn btn-line" href="{{ profile.cv_url | relative_url }}">Download CV</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="portrait-shape" aria-hidden="true"></div>
+      <div class="portrait-frame">
+        {% if photo_len > 0 %}
+        <img src="{{ profile.portrait | relative_url }}" alt="{{ profile.portrait_alt | escape }}" width="600" height="800">
+        {% endif %}
+      </div>
+      <span class="portrait-dot" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="experience-title">Experience</h2>
+      <p class="sub">{{ profile.experience_intro | escape }}</p>
+    </div>
+    <ol class="jobs">
+      {% for job in site.data.experience %}
+      {% assign desc_len = job.description | size %}
+      <li class="job">
+        {% if desc_len > 0 %}
+        <details{% if forloop.first %} open{% endif %}>
+          <summary class="row">
+            <span class="dates">{{ job.dates | escape }}</span>
+            <span class="role"><span class="title">{{ job.title | escape }}</span><span class="company">{{ job.company | escape }}</span></span>
+            <span class="toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="desc"><p>{{ job.description | escape }}</p></div>
+        </details>
+        {% else %}
+        <div class="row">
+          <span class="dates">{{ job.dates | escape }}</span>
+          <span class="role"><span class="title">{{ job.title | escape }}</span><span class="company">{{ job.company | escape }}</span></span>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+      <li class="job also">
+        <div class="row">
+          <span class="dates">{{ profile.also_label | escape }}</span>
+          <span class="role"><span class="also-text">{{ profile.also_text | escape }}</span></span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+{% if projects.size > 0 %}
+<section class="section band" id="portfolio" aria-labelledby="portfolio-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div>
+        <h2 id="portfolio-title">Portfolio</h2>
+        <p class="sub">{{ profile.portfolio_intro | escape }}</p>
+      </div>
+      <div class="arrows" hidden>
+        <button class="arrow" type="button" data-dir="-1" aria-label="Previous projects"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="arrow" type="button" data-dir="1" aria-label="Next projects"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+    <ul class="cards" tabindex="0" aria-label="Portfolio projects">
+      {% for p in projects %}
+      {% assign img_len = p.image | size %}
+      {% assign url_len = p.url | size %}
+      <li class="card c{{ forloop.index0 | modulo: 3 }}">
+        <div class="thumb">{% if img_len > 0 %}<img src="{{ p.image | relative_url }}" alt="{{ p.alt | escape }}" loading="lazy">{% endif %}</div>
+        <h3>{% if url_len > 0 %}<a href="{{ p.url }}" rel="noopener">{{ p.title | escape }}</a>{% else %}{{ p.title | escape }}{% endif %}</h3>
+        <p class="meta">{{ p.client | escape }} | {{ p.channel | escape }} | {{ p.year }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="dots" aria-hidden="true"></div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="skills-title">Skills and tools</h2>
+    </div>
+    <dl class="skills">
+      {% for s in site.data.skills %}
+      <div class="skill"><dt>{{ s.label | escape }}</dt><dd>{{ s.items | escape }}</dd></div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 id="contact-title">{{ profile.contact_heading | escape }}</h2>
+    <p><a class="mail" href="mailto:{{ profile.email }}">{{ profile.email | escape }}</a></p>
+    <div class="contact-foot">
+      <a class="btn btn-line-light" href="{{ profile.linkedin_url }}" rel="me noopener">LinkedIn</a>
+      <span class="li-url">{{ profile.linkedin_label | escape }}</span>
+    </div>
+  </div>
+</section>

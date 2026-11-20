@@ -1,0 +1,27 @@
+# Jobs, newest first. A job with a description gets a + button that opens it.
+# The newest job starts open. Jobs without a description are shown as plain rows.
+
+- dates: "01/2025 – now"
+  title: "Brand and Loans Marketing Manager"
+  company: "Inbank Latvia"
+  description: "Yearly marketing strategy and budget. Campaigns across traditional and digital channels. Landing pages, newsletters, SMS, social, OOH and press releases. Coordinating agencies and freelancers."
+
+- dates: "08/2022 – 07/2024"
+  title: "Marketing Manager"
+  company: "CityBee Latvia"
+
+- dates: "03/2019 – 08/2022"
+  title: "Digital Marketing and Content Project Manager"
+  company: "Cube Agency"
+
+- dates: "08/2018 – 03/2019"
+  title: "Digital Marketing Project Manager (contract)"
+  company: "Alpha Baltic"
+
+- dates: "05/2017 – 07/2018"
+  title: "Video Producer"
+  company: "Colortime"
+
+- dates: "04/2016 – 12/2017"
+  title: "Account Manager, Video Producer"
+  company: "Tribe Riga"

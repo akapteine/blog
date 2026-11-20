@@ -1,0 +1,17 @@
+# Site settings for agnese.kapteine.lv (Jekyll on GitHub Pages)
+
+title: Agnese Kapteine
+description: Marketing portfolio of Agnese Kapteine. Brand, digital and performance marketing in Latvia.
+url: "https://agnese.kapteine.lv"
+baseurl: ""
+lang: en
+
+# Minima is only the technical starting point; the look comes from
+# _layouts/default.html and assets/css/style.scss.
+theme: minima
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md

@@ -1,0 +1,13 @@
+# Portfolio projects, newest first. While this list is empty (just "[]"),
+# the Portfolio section and its menu link are hidden.
+#
+# To add a project, delete the "[]" line below and add an entry like this:
+#
+# - title: "Project name"
+#   client: "Client"
+#   channel: "Channel"
+#   year: 2025
+#   image: "/assets/portfolio/project-name.jpg"
+#   alt: "One sentence that describes the image"
+#   url: "https://example.com"        # optional link
+[]

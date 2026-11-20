@@ -1,0 +1,25 @@
+# Text and links shown on the home page. Edit the words inside the quotes.
+
+headline_1: "Hi, I'm Agnese."
+headline_2: "I make marketing work."
+lead: "Brand, digital and performance marketing in Latvia. Ten years of planning campaigns, running them and reading the numbers afterwards."
+
+# Portrait photo (3:4). Leave "" until there is a photo; the decorative shape is shown without it.
+# Example: portrait: "/assets/portrait.jpg"
+portrait: ""
+portrait_alt: ""
+
+# CV file. Leave "" and the "Download CV" button is hidden.
+# Example: cv_url: "/assets/Agnese-Kapteine-CV.pdf"
+cv_url: ""
+
+experience_intro: "Where I've worked, newest first."
+also_label: "Also"
+also_text: "Board Member, Latvian Mobility Association (10/2023 – 07/2024)"
+
+portfolio_intro: "Campaigns and content I worked on."
+
+contact_heading: "Want to talk marketing?"
+email: "agnese@kapteine.lv"
+linkedin_url: "https://www.linkedin.com/in/kapteine"
+linkedin_label: "linkedin.com/in/kapteine"

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <meta name="theme-color" content="#FBE58A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&amp;display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  {% assign projects = site.data.portfolio %}
+  <header class="site-header" id="top">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>home</a></li>
+          <li><a href="{{ '/' | relative_url }}#experience">experience</a></li>
+          {% if projects.size > 0 %}<li><a href="{{ '/' | relative_url }}#portfolio">portfolio</a></li>{% endif %}
+          <li><a href="{{ '/' | relative_url }}#skills">skills</a></li>
+          <li><a href="{{ '/' | relative_url }}#contact">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>
